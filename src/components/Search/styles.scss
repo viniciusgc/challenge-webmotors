@@ -1,0 +1,204 @@
+@import "../../scss/variable.scss";
+
+.search-card {
+  @media (min-width: 768px) {
+    padding: 1.3rem 3rem;
+  }
+  @media only screen and (max-width: 64em) {
+    padding: 1rem 1rem;
+    .advanced {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .clear-search {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .btn-show {
+      margin-top: 1rem;
+    }
+  }
+
+  .location {
+    width: 80% !important;
+    border-right: 2px solid #ecedf2 !important;
+    margin-right: 0.5rem;
+  }
+  .range {
+    width: 40% !important;
+  }
+
+  background-color: white;
+  box-shadow: 1px 2px 5px rgba(180, 180, 200, 0.8);
+
+  .link-clear {
+    color: $gray;
+    font-weight: 600;
+  }
+  .label-custom {
+    width: 160px !important;
+  }
+
+  .checkbox-inline {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    color: #777;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      border: 2px solid #ecedf2;
+    }
+    &:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    input:checked ~ .checkmark {
+      background-color: white;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid $primary;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:last-child {
+      margin-left: 1rem;
+    }
+  }
+
+  .select-wrap {
+    border: 2px solid #ecedf2;
+    border-radius: 4px;
+    padding: 0 5px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    label {
+      font-size: 15px;
+      color: #777;
+      top: 6px;
+      width: 90px;
+    }
+    select {
+      background: url("../../assets/img/arrow.png") no-repeat right #ddd;
+      -webkit-appearance: none;
+      background-color: #fff;
+      border: 0px;
+      height: 45px;
+      font-size: 16px;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+    .custom-selct {
+      color: #777;
+    }
+
+    margin-bottom: 1rem;
+  }
+}
+.nav {
+  .link-main {
+    text-decoration: none !important;
+    margin-bottom: 1rem;
+    color: #777;
+    display: flex;
+    align-items: center;
+    i {
+      padding-right: 20px;
+    }
+    div {
+      line-height: 1;
+    }
+    .primary {
+      color: $primary !important;
+    }
+
+    .title-one {
+      margin: 0;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .title-two {
+      font-size: 27px;
+    }
+  }
+
+  .border-active {
+    border-bottom: 3px solid $primary;
+  }
+  .border {
+    border-bottom: 3px solid transparent;
+  }
+  .btn-sell {
+    margin-left: 25%;
+    button {
+      background-color: transparent;
+      border: 2px solid #ebac52;
+      border-radius: 4px;
+      font-size: 18px;
+      line-height: 2;
+      width: 100%;
+      color: #ebac52;
+      font-weight: 600;
+      &:hover {
+        background-color: #ebac52;
+        color: white;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 64em) {
+    display: flex;
+    justify-content: space-between;
+    .col-md-3 {
+      flex: 1;
+      padding: 0 0.5rem;
+    }
+    .btn-sell {
+      display: none;
+    }
+  }
+}
